@@ -18,19 +18,14 @@
       <div id="progress-text" class="text-sm text-gray-500">1/12</div>
     </div>
 
-    <!-- 进度条 -->
     <div class="h-2 bg-gray-200 rounded-full mb-8">
       <div id="progress-bar" class="h-2 bg-indigo-600 rounded-full w-1/12 transition-all duration-300"></div>
     </div>
 
     <div class="bg-white rounded-3xl shadow-xl p-8 md:p-10">
-      <h2 id="question-text" class="text-xl md:text-2xl leading-relaxed text-gray-800 mb-10 text-center">
-        在社交聚会中，你通常感觉如何？
-      </h2>
+      <h2 id="question-text" class="text-xl md:text-2xl leading-relaxed text-gray-800 mb-10 text-center"></h2>
 
-      <div class="space-y-4" id="options">
-        <!-- 选项会由JS动态生成 -->
-      </div>
+      <div class="space-y-4" id="options"></div>
     </div>
 
     <p class="text-center text-gray-400 mt-8 text-sm">测试仅供娱乐 · 结果基于心理学量表</p>
@@ -43,7 +38,7 @@
     const questions = [
       { q: "在社交聚会中，你通常感觉如何？", a: "感觉很兴奋，喜欢和很多人聊天", b: "感觉有点累，更喜欢和小圈子深入聊天" },
       { q: "你更喜欢通过什么方式获取信息？", a: "亲身体验和实际操作", b: "阅读资料和理论分析" },
-      { q: "做决定时，你主要依靠？", a: "逻辑分析和客观事实", b: "个人价值观和他人感受" },
+      { q: "做决定时，你主要依靠？", a: "逻辑分析和客观事实", b: "个人价值观和他人的感受" },
       { q: "你更倾向于过怎样的生活？", a: "有计划、有条理的生活", b: "灵活自由、随性而为的生活" },
       { q: "参加派对时，你通常？", a: "主动认识很多新朋友", b: "和熟悉的朋友待在一起" },
       { q: "面对新想法，你的态度是？", a: "立刻尝试，很有兴趣", b: "需要时间思考和观察" },
@@ -83,4 +78,7 @@
       }
     }
 
-    //
+    window.onload = loadQuestion;
+  </script>
+</body>
+</html>
