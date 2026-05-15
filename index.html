@@ -7,29 +7,24 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
-    .hero {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    .hero { 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
     }
   </style>
 </head>
 <body class="bg-gray-50 font-sans">
 
-  <!-- 导航 -->
+  <!-- 导航栏 -->
   <nav class="bg-white shadow-sm">
     <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
       <div class="flex items-center gap-3">
         <i class="fa-solid fa-brain text-3xl text-indigo-600"></i>
         <span class="text-2xl font-bold text-gray-800">心流测试</span>
       </div>
-      <div class="hidden md:flex gap-8 text-lg">
-        <a href="#" class="hover:text-indigo-600">首页</a>
-        <a href="#" class="hover:text-indigo-600">测试</a>
-        <a href="#" class="hover:text-indigo-600">关于</a>
-      </div>
     </div>
   </nav>
 
-  <!-- Hero 大图区 -->
+  <!-- Hero 区域 -->
   <section class="hero text-white py-28 md:py-40 text-center">
     <div class="max-w-4xl mx-auto px-6">
       <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
@@ -39,7 +34,8 @@
         专业心理人格测试 · 科学有趣 · 立即免费
       </p>
       
-      <a href="#" 
+      <!-- 这里改成了可以跳转 -->
+      <a href="test.html" 
          class="inline-block bg-white text-indigo-700 hover:bg-yellow-300 font-bold text-2xl px-14 py-6 rounded-3xl shadow-2xl transition transform hover:scale-105">
         立即开始测试 →
       </a>
@@ -49,7 +45,7 @@
   </section>
 
   <footer class="text-center py-12 text-gray-500 border-t">
-    © 2026 心流测试 xinlicsku | 仅供娱乐参考
+    © 2026 心流测试 | 仅供娱乐参考
   </footer>
 </body>
 </html>
