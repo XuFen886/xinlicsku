@@ -9,45 +9,62 @@
 </head>
 <body class="bg-gray-50 min-h-screen">
 
-  <div class="max-w-2xl mx-auto p-6 pt-12">
-    <div class="text-center mb-10">
-      <h1 class="text-4xl font-bold text-indigo-700 mb-3">你的测试结果</h1>
-      <p id="type" class="text-5xl font-bold text-gray-800"></p>
+  <div class="max-w-2xl mx-auto p-6 pt-10">
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-indigo-700">你的测试结果</h1>
     </div>
 
-    <div class="bg-white rounded-3xl shadow-xl p-10 mb-8">
+    <div class="bg-white rounded-3xl shadow-2xl p-8 text-center">
+      <p class="text-indigo-600 text-lg font-medium">你的 MBTI 类型是</p>
+      <p id="mbti-type" class="text-6xl font-bold text-gray-800 mt-3 mb-2"></p>
+      <p id="mbti-name" class="text-2xl text-gray-600"></p>
+    </div>
+
+    <div class="mt-8 bg-white rounded-3xl shadow-xl p-8">
       <h2 class="text-2xl font-bold mb-6">结果解读</h2>
-      <div id="description" class="text-lg leading-relaxed text-gray-700"></div>
+      <div id="description" class="text-gray-700 leading-relaxed text-lg"></div>
     </div>
 
-    <a href="test.html" class="block text-center py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg mb-3">
-      重新测试
-    </a>
-    <a href="index.html" class="block text-center py-4 text-gray-600">
-      返回首页
-    </a>
+    <div class="mt-8 flex gap-4">
+      <a href="test.html" class="flex-1 py-4 bg-indigo-600 text-white text-center rounded-2xl font-bold text-lg">
+        重新测试
+      </a>
+      <a href="index.html" class="flex-1 py-4 bg-gray-200 text-gray-700 text-center rounded-2xl font-bold text-lg">
+        返回首页
+      </a>
+    </div>
   </div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const score = parseInt(params.get('score')) || 50;
+    const score = parseInt(params.get('score')) || 0;
 
-    let type = "平衡型人格";
-    let desc = "你在内向与外向之间比较平衡，既能享受独处，也能适应社交。";
+    // 根据总分生成更丰富的 MBTI 类型（模拟4个维度）
+    let type = "ISTJ";
+    let name = "内向 · 实感 · 思考 · 判断";
+    let desc = "你是一个安静、负责、注重细节的人。你喜欢有计划的生活，重视传统和规则。";
 
-    if (score >= 75) {
-      type = "外向领袖型 (E)";
-      desc = "你充满能量，喜欢与人互动，擅长表达和领导。适合销售、管理、教学等工作。";
-    } else if (score >= 50) {
-      type = "活跃社交型";
-      desc = "你热情开朗，容易结交朋友，是人群中的焦点。";
-    } else {
-      type = "内向思考型 (I)";
-      desc = "你更喜欢安静的环境，思考深刻，创造力强。适合研究、写作、设计等工作。";
+    if (score >= 9) {
+      type = "ENFP";
+      name = "外向 · 直觉 · 情感 · 感知";
+      desc = "你充满热情和创造力，喜欢探索新想法，对人充满好奇心，是天生的idea机器。";
+    } else if (score >= 7) {
+      type = "INTJ";
+      name = "内向 · 直觉 · 思考 · 判断";
+      desc = "你有很强的战略思维和独立思考能力，是典型的完美主义者和规划者。";
+    } else if (score >= 5) {
+      type = "ESFJ";
+      name = "外向 · 实感 · 情感 · 判断";
+      desc = "你温暖、善良、注重和谐，喜欢照顾他人，是典型的“大家长”类型。";
+    } else if (score >= 3) {
+      type = "INFP";
+      name = "内向 · 直觉 · 情感 · 感知";
+      desc = "你理想主义、富有同理心，追求内心的真实和价值观。";
     }
 
-    document.getElementById('type').textContent = type;
-    document.getElementById('description').innerHTML = desc;
+    document.getElementById('mbti-type').textContent = type;
+    document.getElementById('mbti-name').textContent = name;
+    document.getElementById('description').innerHTML = desc + "<br><br>这个测试为简化版，仅供娱乐参考。真实 MBTI 需要更全面的评估。";
   </script>
 </body>
 </html>
